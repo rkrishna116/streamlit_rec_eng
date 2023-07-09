@@ -12,8 +12,13 @@ st.title('Book Recommender System')
 def load_data(url):
     df = pd.read_csv(url)
     return df
+df1 = pd.read_csv('book1.csv')
+df2 = pd.read_csv('book2.csv')
+df3 = pd.read_csv('book3.csv')
+df4 = pd.read_csv('book4.csv')
 
-df = load_data("C:\\Users\\radhakrishna.sp\\OneDrive - Impelsys\\Desktop\\demo_rec_eng_data.csv").drop('Unnamed: 0', axis=1)
+df = pd.concat([df1, df2, df3, df4])
+#df = load_data("C:\\Users\\radhakrishna.sp\\OneDrive - Impelsys\\Desktop\\demo_rec_eng_data.csv").drop('Unnamed: 0', axis=1)
 
 # Function to calculate cosine similarity and cache the result
 @st.cache(allow_output_mutation=True)
